@@ -20,15 +20,19 @@ public class Soundex {
             return "";
         }
         name = name.toUpperCase();
+        StringBuilder soundex = new StringBuilder();
         soundex.append(name.charAt(0));
 
 
         for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
             char code = getSoundexCode(name.charAt(i));
 
-            if (code != '0' && code != getSoundexCode(name.charAt(i - 1))) {
-                soundex.append(code);
-            }
+            // if (code != '0' && code != getSoundexCode(name.charAt(i - 1))) {
+            //     soundex.append(code);
+            // }
+           
+            code != '0' && code != getSoundexCode(name.charAt(i - 1))? soundex.append(code):continue;
+           
         }
 
         if (soundex.length() < 4) {
