@@ -34,14 +34,17 @@ public class Soundex {
            if (code != '0' && code != prevCode) {
                soundex.append(code);
            }
-           
         }
-
-        if (soundex.length() < 4) {
+       return checkLength(soundex);
+       
+    }
+   
+   private static StringBuilder checkLength(StringBuilder soundex){
+      if (soundex.length() < 4) {
             soundex.append('0');
         }
-        return soundex.toString();
-    }
+       return soundex.toString();
+   }
 
     private static char getSoundexCode(char c) {
 
