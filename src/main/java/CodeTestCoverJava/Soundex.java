@@ -24,7 +24,7 @@ public class Soundex {
         soundex.append(name.charAt(0));
 
 
-        for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
+        for (int i = 1; i < name.length(); i++) {
            char currentChar = name.charAt(i);
            char previousChar = name.charAt(i - 1);
 
