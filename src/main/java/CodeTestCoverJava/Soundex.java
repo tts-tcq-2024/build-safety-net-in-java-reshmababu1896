@@ -25,13 +25,15 @@ public class Soundex {
 
 
         for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
-            char code = getSoundexCode(name.charAt(i));
+           char currentChar = name.charAt(i);
+           char previousChar = name.charAt(i - 1);
 
-            // if (code != '0' && code != getSoundexCode(name.charAt(i - 1))) {
-            //     soundex.append(code);
-            // }
-           
-            code != '0' && code != getSoundexCode(name.charAt(i - 1))? soundex.append(code):continue;
+           char code = getSoundexCode(currentChar);
+           char prevCode = getSoundexCode(previousChar);
+
+           if (code != '0' && code != prevCode) {
+               soundex.append(code);
+           }
            
         }
 
