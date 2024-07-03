@@ -22,9 +22,18 @@ public class Soundex {
         name = name.toUpperCase();
         StringBuilder soundex = new StringBuilder();
         soundex.append(name.charAt(0));
-
-
-        for (int i = 1; i < name.length(); i++) {
+         soundex=checkLength(soundex,name);
+       
+      if (soundex.length() < 4) {
+            soundex.append('0');
+        }
+       return soundex.toString();
+       
+    }
+   
+   private static StringBuilder checkLength(StringBuilder soundex,String name){
+       for (int i = 1; i < name.length(); i++) {
+          
            char currentChar = name.charAt(i);
            char previousChar = name.charAt(i - 1);
 
@@ -35,15 +44,7 @@ public class Soundex {
                soundex.append(code);
            }
         }
-       return checkLength(soundex);
-       
-    }
-   
-   private static StringBuilder checkLength(StringBuilder soundex){
-      if (soundex.length() < 4) {
-            soundex.append('0');
-        }
-       return soundex.toString();
+      return soundex;
    }
 
     private static char getSoundexCode(char c) {
