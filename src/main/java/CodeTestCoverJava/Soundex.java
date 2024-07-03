@@ -2,7 +2,22 @@ package CodeTestCoverJava;
 
 public class Soundex {
 
-   public static String generateSoundex(String name) {
+   static Map<String, Character> soundexCodeMap=generateMap();
+   
+    public static Map<String, Character> generateMap() {
+        soundexCodeMap=new HashMap<>();
+       
+        soundexCodeMap.put("BFPV", '1');
+        soundexCodeMap.put("CGJKQSXZ", '2');
+        soundexCodeMap.put("DT", '3');
+        soundexCodeMap.put("L", '4');
+        soundexCodeMap.put("M", '5');
+        soundexCodeMap.put("R", '6');
+        soundexCodeMap.put("AEIOUHWY", '0');
+       
+        return soundexCodeMap;
+    }
+    public static String generateSoundex(String name) {
         if (name == null || name.isEmpty()) {
             return "";
         }
@@ -26,21 +41,12 @@ public class Soundex {
     }
 
     private static char getSoundexCode(char c) {
-        switch (c) {
-            case 'B': case 'F': case 'P': case 'V':
-                return '1';
-            case 'C': case 'G': case 'J': case 'K': case 'Q': case 'S': case 'X': case 'Z':
-                return '2';
-            case 'D': case 'T':
-                return '3';
-            case 'L':
-                return '4';
-            case 'M': case 'N':
-                return '5';
-            case 'R':
-                return '6';
-            default:
-                return '0'; // For A, E, I, O, U, H, W, Y
+
+        for (Map.Entry<String,Character> entry : soundexCodeMap.entrySet()){
+            if(entry.getKey().contains(String.valueOf(c))){
+                return entry.getValue();
+            }
         }
+        return '0';
     }
 }
