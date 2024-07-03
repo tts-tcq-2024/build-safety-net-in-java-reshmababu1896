@@ -3,10 +3,9 @@ package CodeTestCoverJava;
 public class Soundex {
 
    static Map<String, Character> soundexCodeMap=generateMap();
-   
+   static StringBuilder soundex = new StringBuilder();
     public static Map<String, Character> generateMap() {
         soundexCodeMap=new HashMap<>();
-       
         soundexCodeMap.put("BFPV", '1');
         soundexCodeMap.put("CGJKQSXZ", '2');
         soundexCodeMap.put("DT", '3');
@@ -14,22 +13,20 @@ public class Soundex {
         soundexCodeMap.put("M", '5');
         soundexCodeMap.put("R", '6');
         soundexCodeMap.put("AEIOUHWY", '0');
-       
-        return soundexCodeMap;
+        return null;
     }
     public static String generateSoundex(String name) {
         if (name == null || name.isEmpty()) {
             return "";
         }
         name = name.toUpperCase();
-        StringBuilder soundex = new StringBuilder();
         soundex.append(name.charAt(0));
 
 
         for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
             char code = getSoundexCode(name.charAt(i));
-            char prevCode = getSoundexCode(name.charAt(i - 1));
-            if (code != '0' && code != prevCode) {
+
+            if (code != '0' && code != getSoundexCode(name.charAt(i - 1))) {
                 soundex.append(code);
             }
         }
