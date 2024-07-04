@@ -1,5 +1,8 @@
 package CodeTestCoverJava;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class Soundex {
 
    static Map<String, Character> soundexCodeMap=generateMap();
