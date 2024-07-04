@@ -23,13 +23,15 @@ public class Soundex {
         StringBuilder soundex = new StringBuilder();
         soundex.append(name.charAt(0));
          soundex=checkLength(soundex,name);
-       
+      return appendZero(soundex);
+    }
+   
+   private static StringBuilder appendZero(StringBuilder soundex){
       if (soundex.length() < 4) {
             soundex.append('0');
         }
        return soundex.toString();
-       
-    }
+   }
    
    private static StringBuilder checkLength(StringBuilder soundex,String name){
        for (int i = 1; i < name.length(); i++) {
