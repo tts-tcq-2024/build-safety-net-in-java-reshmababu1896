@@ -34,7 +34,7 @@ public class Soundex {
    }
    
    private static StringBuilder checkLength(StringBuilder soundex,String name){
-       for (int i = 1; i < name.length(); i++) {
+       for (int i = 1; i < name.length() &&  soundex.length() < 4; i++) {
           
            char currentChar = name.charAt(i);
            char previousChar = name.charAt(i - 1);
