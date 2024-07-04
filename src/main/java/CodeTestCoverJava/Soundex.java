@@ -42,12 +42,18 @@ public class Soundex {
            char code = getSoundexCode(currentChar);
            char prevCode = getSoundexCode(previousChar);
 
-           if (code != '0' && code != prevCode) {
-               soundex.append(code);
-           }
+           soundex=appendCode(code,prevCode,soundex);
         }
       return soundex;
    }
+
+   private static StringBuilder appendCode(Char currentCode,Char prevCode,StringBuilder soundex){
+      if (currentCode != '0' && code != prevCode) {
+               soundex.append(code);
+           }
+      return soundex;
+   }
+   
 
     private static char getSoundexCode(char c) {
 
