@@ -2,7 +2,7 @@ package CodeTestCoverJava;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
-import org.mockito.Mockito;
+import org.mockito.junit.MockitoJUnitRunner;
 
 import org.junit.Test;
 
