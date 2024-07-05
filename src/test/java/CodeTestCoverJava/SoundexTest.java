@@ -16,24 +16,21 @@ public class SoundexTest {
 
     @Test
     public void testSingleCharacter() {
-        String value=Soundex.generateSoundex("A");
-        assertEquals("A000", value);
+        assertEquals("A000", Soundex.generateSoundex("A"));
     }
 
     @Test
     public void testString1() {
-        String value=Soundex.generateSoundex("BOSCH");
-        assertEquals("B200", value);
+        assertEquals("B200", Soundex.generateSoundex("BOSCH"));
     }
      @Test
     public void testString2() {
-         String value=Soundex.generateSoundex("Siemens");
-         assertEquals("S552", value);
+         assertEquals("S552", Soundex.generateSoundex("Siemens"));
     }
     
     @Test
     public void testNullString() {
-        assertTrue(Soundex.generateSoundex(null)=="");
+        assertEquals("", Soundex.generateSoundex(null));
     }
     
     //  @Test
