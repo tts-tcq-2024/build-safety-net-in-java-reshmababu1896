@@ -10,7 +10,7 @@ import org.mockito.Spy;
 import org.junit.Test;
 
 public class SoundexTest {
-    Soundex soundexMock = Mockito.spy(Soundex.class);
+    Soundex soundexMock = Mockito.mock(Soundex.class);
 
     @Test
     public void testEmptyString() {
