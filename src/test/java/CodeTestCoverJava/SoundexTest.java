@@ -45,7 +45,7 @@ public class SoundexTest {
         soundexMock.generateSoundex(name);
        // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex, name);
         // verify(soundexMock. Mockito.times(1)).checkLength(soundex,name);
-        verify(soundexMock, times(1)).checkLength(soundex,name);
+        verify(soundexMock).checkLength(soundex,name);
         // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(Mockito.any(StringBuilder.class), Mockito.eq(name));
     }
     
