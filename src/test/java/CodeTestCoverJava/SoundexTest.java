@@ -1,11 +1,11 @@
 package CodeTestCoverJava;
 
 import static org.junit.Assert.assertTrue;
-import org.mockito.Mockito;
-import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.times;
-import static org.mockito.Mockito.verify;
-import static org.mockito.Mockito.when;
+import org.mockito.Mockito.*;
+// import static org.mockito.Mockito.mock;
+// import static org.mockito.Mockito.times;
+// import static org.mockito.Mockito.verify;
+// import static org.mockito.Mockito.when;
 
 import org.junit.Test;
 
@@ -28,7 +28,7 @@ public class SoundexTest {
     }
     
      @Test
-    public void testNullString() {
+    public void testVerifyCheckLengthIsCalled() {
         StringBuilder soundex=new StringBuilder();
         String name="AEIOU";
         spyObject.generateSoundex(name);
