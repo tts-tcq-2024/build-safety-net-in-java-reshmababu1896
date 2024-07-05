@@ -13,9 +13,18 @@ public class SoundexTest {
         assertTrue(Soundex.generateSoundex("")=="");
     }
 
+    // @Test
+    // public void testSingleCharacter() {
+    //      assertTrue(Soundex.generateSoundex("A")=="A000");
+    // }
+
     @Test
-    public void testSingleCharacter() {
-         assertTrue(Soundex.generateSoundex("A")=="A000");
+    public void testString1() {
+        assertTrue(Soundex.generateSoundex("BOSCH")=="B120");
+    }
+     @Test
+    public void testString2() {
+        assertTrue(Soundex.generateSoundex("Siemens")=="S250");
     }
     
     @Test
