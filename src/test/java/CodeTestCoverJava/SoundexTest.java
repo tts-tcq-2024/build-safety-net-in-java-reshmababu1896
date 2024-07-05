@@ -3,6 +3,9 @@ package CodeTestCoverJava;
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertEquals;
 import org.mockito.junit.MockitoJUnitRunner;
+import org.junit.Test;
+import org.mockito.Mockito;
+import org.mockito.Spy;
 
 import org.junit.Test;
 
@@ -38,8 +41,9 @@ public class SoundexTest {
         StringBuilder soundex=new StringBuilder();
         String name="AEIOU";
         soundexMock.generateSoundex(name);
-       Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex,name);
+       // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex,name);
         // verify(soundexMock. Mockito.times(1)).checkLength(soundex,name);
+        Mockito.verify(soundexMock, Mockito.times(1)).checkLength(Mockito.any(StringBuilder.class), Mockito.eq(name));
     }
     
     
