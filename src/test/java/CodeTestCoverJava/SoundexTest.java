@@ -20,7 +20,7 @@ public class SoundexTest {
 
     @Test
     public void testString1() {
-        assertTrue(Soundex.generateSoundex("BOSCH")=="B120");
+        assertTrue(Soundex.generateSoundex("BOSCH")=="B200");
     }
      @Test
     public void testString2() {
