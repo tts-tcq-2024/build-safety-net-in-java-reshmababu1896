@@ -30,14 +30,14 @@ public class Soundex {
         return appendZero(soundex).toString();
     }
    
-   private static StringBuilder appendZero(StringBuilder soundex) {
+   protected static StringBuilder appendZero(StringBuilder soundex) {
         while (soundex.length() < 4) {
             soundex.append('0');
         }
         return soundex;
     }
    
-   private static void checkLength(StringBuilder soundex, String name) {
+   protected static void checkLength(StringBuilder soundex, String name) {
         for (int i = 1; i < name.length() && soundex.length() < 4; i++) {
             char currentChar = name.charAt(i);
             char previousChar = name.charAt(i - 1);
@@ -49,14 +49,14 @@ public class Soundex {
         }
     }
 
-   private static void appendCode(char currentCode, char prevCode, StringBuilder soundex) {
+   protected static void appendCode(char currentCode, char prevCode, StringBuilder soundex) {
         if (currentCode != '0' && currentCode != prevCode) {
             soundex.append(currentCode);
         }
     }
    
 
-    private static char getSoundexCode(char c) {
+    protected static char getSoundexCode(char c) {
         c = Character.toUpperCase(c);
         for (Map.Entry<String, Character> entry : soundexCodeMap.entrySet()) {
             if (entry.getKey().contains(String.valueOf(c))) {
