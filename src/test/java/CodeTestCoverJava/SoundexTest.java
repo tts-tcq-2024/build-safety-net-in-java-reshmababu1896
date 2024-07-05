@@ -1,7 +1,6 @@
 package CodeTestCoverJava;
 
 import static org.junit.Assert.assertTrue;
-import org.junit.jupiter.api.Test;
 import org.mockito.Mockito;
 
 import org.junit.Test;
