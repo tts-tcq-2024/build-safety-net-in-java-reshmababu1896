@@ -38,7 +38,7 @@ public class SoundexTest {
         String name="AEIOU";
         soundexMock.generateSoundex(name);
        // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex,name);
-        verify(soundexMock. times(1)).checkLength(soundex,name);
+        verify(soundexMock. Mockito.times(1)).checkLength(soundex,name);
     }
     
     
