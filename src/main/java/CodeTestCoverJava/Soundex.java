@@ -13,7 +13,7 @@ public class Soundex {
         soundexCodeMap.put("CGJKQSXZ", '2');
         soundexCodeMap.put("DT", '3');
         soundexCodeMap.put("L", '4');
-        soundexCodeMap.put("M", '5');
+        soundexCodeMap.put("MN", '5');
         soundexCodeMap.put("R", '6');
         soundexCodeMap.put("AEIOUHWY", '0');
         return soundexCodeMap;
