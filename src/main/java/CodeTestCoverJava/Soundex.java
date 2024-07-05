@@ -34,7 +34,7 @@ public class Soundex {
         while (soundex.length() < 4) {
             soundex.append('0');
         }
-      Logger.info("Soundex out put is ********************"soundex);
+     System.out.println("Soundex out put is ********************  "+soundex);
         return soundex;
     }
    
