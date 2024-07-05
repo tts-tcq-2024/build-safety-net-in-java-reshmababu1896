@@ -1,6 +1,7 @@
 package CodeTestCoverJava;
 
 import static org.junit.Assert.assertTrue;
+import static org.junit.Assert.assertEquals;
 import org.mockito.Mockito;
 
 import org.junit.Test;
@@ -13,18 +14,21 @@ public class SoundexTest {
         assertTrue(Soundex.generateSoundex("")=="");
     }
 
-    // @Test
-    // public void testSingleCharacter() {
-    //      assertTrue(Soundex.generateSoundex("A")=="A000");
-    // }
+    @Test
+    public void testSingleCharacter() {
+        String value=Soundex.generateSoundex("A");
+        assertEquals("A000", value);
+    }
 
     @Test
     public void testString1() {
-        assertTrue(Soundex.generateSoundex("BOSCH")=="B200");
+        String value=Soundex.generateSoundex("BOSCH");
+        assertEquals("B200", value);
     }
      @Test
     public void testString2() {
-        assertTrue(Soundex.generateSoundex("Siemens")=="S250");
+         String value=Soundex.generateSoundex("Siemens");
+         assertEquals("S552", value);
     }
     
     @Test
