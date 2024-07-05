@@ -7,7 +7,7 @@ import org.mockito.Mockito;
 import org.junit.Test;
 
 public class SoundexTest {
-    Soundex soundexMock = Mockito.mock(Soundex.class);
+    Soundex soundexMock = Mockito.spy(Soundex.class);
 
     @Test
     public void testEmptyString() {
@@ -33,14 +33,14 @@ public class SoundexTest {
         assertEquals("", Soundex.generateSoundex(null));
     }
     
-    //  @Test
-    // public void testVerifyCheckLengthIsCalled() {
-    //     StringBuilder soundex=new StringBuilder();
-    //     String name="AEIOU";
-    //     soundexMock.generateSoundex(name);
-    //    Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex,name);
-    //     // verify(soundexMock. Mockito.times(1)).checkLength(soundex,name);
-    // }
+     @Test
+    public void testVerifyCheckLengthIsCalled() {
+        StringBuilder soundex=new StringBuilder();
+        String name="AEIOU";
+        soundexMock.generateSoundex(name);
+       // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex,name);
+        verify(soundexMock. Mockito.times(1)).checkLength(soundex,name);
+    }
     
     
 }
