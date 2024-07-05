@@ -1,7 +1,8 @@
 package CodeTestCoverJava;
 
 import static org.junit.Assert.assertTrue;
-import org.mockito.Mockito.*;
+import static main.java.CodeTestcoverJava.Soundex;
+import static org.mockito.Mockito.*;
 // import static org.mockito.Mockito.mock;
 // import static org.mockito.Mockito.times;
 // import static org.mockito.Mockito.verify;
