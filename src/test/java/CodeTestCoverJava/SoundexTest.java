@@ -25,29 +25,16 @@ public class SoundexTest {
     }
 
     @Test
-    public void testString1() {
+    public void testStringB200() {
         assertEquals("B200", Soundex.generateSoundex("BOSCH"));
     }
      @Test
-    public void testString2() {
+    public void testStringS552() {
          assertEquals("S552", Soundex.generateSoundex("Siemens"));
     }
     
     @Test
     public void testNullString() {
         assertEquals("", Soundex.generateSoundex(null));
-    }
-    
-    //  @Test
-    // public void testVerifyCheckLengthIsCalled() {
-    //     StringBuilder soundex=new StringBuilder();
-    //     String name="AEIOU";
-    //     soundexMock.generateSoundex(name);
-    //    // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(soundex, name);
-    //     // verify(soundexMock. Mockito.times(1)).checkLength(soundex,name);
-    //     verify(soundexMock).checkLength(soundex,name);
-    //     // Mockito.verify(soundexMock, Mockito.times(1)).checkLength(Mockito.any(StringBuilder.class), Mockito.eq(name));
-    // }
-    
-    
+    }  
 }
